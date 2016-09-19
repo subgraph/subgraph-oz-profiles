@@ -1,0 +1,18 @@
+Source: subgraph-oz-profiles
+Section: security
+Priority: optional
+Maintainer: Subgraph <info@subgraph.com>
+Build-Depends: debhelper (>= 9), dh-systemd
+Standards-Version: 3.9.6
+Homepage: https://github.com/subgraph/subgraph-oz-profiles
+Vcs-Git: https://github.com/subgraph/subgraph-oz-profiles.git
+XS-Go-Import-Path: github.com/subgraph/subgraph-oz-profiles
+Vcs-Browser: https://github.com/subgraph/subgraph-oz-profiles
+
+Package: subgraph-oz-profiles
+Architecture: all
+Depends: oz-daemon (>= 0.1.1), ${shlibs:Depends}, ${misc:Depends}
+Recommends: subgraph-oz-profiles
+Description: Subgraph OZ Sandboxing Profile
+ This package contains curated OZ sandbox profiles
+ and seccomp filters.
