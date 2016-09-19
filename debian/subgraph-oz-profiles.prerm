@@ -19,7 +19,7 @@ set -e
 
 case "$1" in
     remove|upgrade|deconfigure)
-        killall oz-init &>>/dev/null
+        oz killall &>> /dev/null || true
         for file in /var/lib/oz/cells.d/*.json; do bf=$(basename $file); /usr/sbin/oz-setup remove --force ${bf%%.*}; done
     ;;
 
