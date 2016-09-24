@@ -1,3 +1,5 @@
+TIOCGPGRP=21519
+
 # futex: FUTEX_CMP_REQUEUE_PRIVATE || FUTEX_LOCK_PI_PRIVATE || FUTEX_UNLOCK_PI_PRIVATE || FUTEX_WAIT || FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME || FUTEX_WAIT_PRIVATE || FUTEX_WAKE || FUTEX_WAKE_OP_PRIVATE || FUTEX_WAKE_PRIVATE || FUTEX_WAIT_BITSET_PRIVATE
 futex: arg1 == 0 || arg1 == 128 || arg1 == 129 || arg1 == 132 || arg1 == 133 || arg1 == 393 || arg1 == 134 || arg1 == 1 || arg1 == 135 || arg1 == 139 || arg1 == 140 || arg1 == 137
 lseek: 1
@@ -20,7 +22,7 @@ rt_sigaction: 1
 fcntl: 1
 brk: 1
 # ioctl: FIONREAD || TCGETS
-ioctl: arg1 == 0x541b || arg1 == 21505
+ioctl: arg1 == 0x541b || arg1 == 21505 || arg1 == TIOCGPGRP
 rt_sigprocmask: 1
 pread64: 1
 seccomp:1
