@@ -21,7 +21,9 @@ set -e
 case "$1" in
     configure)
         for file in /var/lib/oz/cells.d/*.json; do bf=$(basename $file); /usr/sbin/oz-setup install --force ${bf%%.*}; done
-        systemctl restart oz-daemon.service || true
+        if [ -d /run/systemd/system ]; then
+            systemctl restart oz-daemon.service || true
+        fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
