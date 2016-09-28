@@ -51,7 +51,7 @@ brk:1
 munmap:1
 rt_sigaction:1
 fstatfs:1
-fcntl: (arg1 == F_DUPFD) || (arg1 == F_GETFD) || (arg1 == F_SETFD) || (arg1 == F_GETFL) || (arg1 == F_SETFL) || (arg1 == F_SETLKW)
+fcntl: (arg1 == 1030) || (arg1 == F_DUPFD) || (arg1 == F_GETFD) || (arg1 == F_SETFD) || (arg1 == F_GETFL) || (arg1 == F_SETFL) || (arg1 == F_SETLKW) || (arg1 == F_SETLK)
 getdents:1
 sendmsg:1
 uname:1
@@ -73,7 +73,7 @@ link:1
 rename:1
 clone:1
 shmat:1
-ioctl: arg1 == TCGETS || arg1 == FIONREAD
+ioctl: arg1 == TCGETS || arg1 == FIONREAD || arg1 == 21585
 set_robust_list:1
 exit_group:1
 prctl: arg0 == PR_SET_NAME
@@ -85,6 +85,7 @@ accept:1
 getegid:1
 shutdown:1
 wait4:1
+dup:1
 getuid:1
 inotify_rm_watch:1
 inotify_add_watch:1
@@ -94,6 +95,7 @@ getgid:1
 madvise:1
 setresgid:1
 pipe:1
+accept4:1
 getrlimit:1
 eventfd2:1
 getresgid:1
@@ -108,15 +110,23 @@ listen:1
 sched_yield:1
 sched_get_priority_min:1
 ftruncate:1
+rt_sigreturn:1
 getresuid:1
 getcwd:1
+getdents:1
+getdents64:1
+getrandom:1
+fdatasync:1
 setsockopt:arg1 == 1 && arg2 == 2
 set_tid_address:1
 mremap:1
 sched_setscheduler:1
 bind:1
 sysinfo:1
+flock:1
 rt_sigprocmask:1
+sigaltstack:1
+tgkill:1
 getrusage:1
 getppid:1
 getpid:1
