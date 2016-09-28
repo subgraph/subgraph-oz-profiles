@@ -2,6 +2,7 @@
 "name": "onionshare-gui"
 , "path": "/usr/bin/onionshare-gui"
 , "_watchdog": ["onionshare-gui"]
+, "allow_files": true
 , "xserver": {
 	"enabled": true
 	, "enable_tray": false
