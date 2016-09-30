@@ -73,6 +73,7 @@ getegid: 1
 fstat: 1
 mkdir: 1
 unlink: 1
+splice: 1
 symlink: 1
 readlink: 1
 getrlimit: 1
