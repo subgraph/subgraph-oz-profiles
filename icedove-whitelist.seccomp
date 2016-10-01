@@ -96,6 +96,7 @@ execve: 1
 fchmod: 1
 fstatfs: 1
 fsync: 1
+truncate: 1
 ftruncate: 1
 getcwd: 1
 getgid: 1
