@@ -1,7 +1,7 @@
 read: 1
 lseek: 1
 # futex: FUTEX_CMP_REQUEUE_PRIVATE || FUTEX_WAIT || FUTEX_WAKE || FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME || FUTEX_WAIT_PRIVATE || FUTEX_WAKE_OP_PRIVATE || FUTEX_WAKE_PRIVATE || FUTEX_WAIT_BITSET_PRIVATE
-futex: arg1 == 0 || arg1 == 1 || arg1 == 128 || arg1 == 129 || arg1 == 132 || arg1 == 133 || arg1 == 393 || arg1 == 137
+futex[-EPERM]: arg1 == 0 || arg1 == 1 || arg1 == 128 || arg1 == 129 || arg1 == 132 || arg1 == 133 || arg1 == 393 || arg1 == 137
 recvmsg: 1
 poll: 1
 writev: 1
@@ -33,11 +33,13 @@ seccomp:1
 pselect6:1
 clock_gettime:1
 getpid:1
+mremap: 1
 pwrite64:1
 mincore: 1
 alarm: 1
 nanosleep: 1
 fadvise64: 1
+inotify_init: 1
 accept4: 1
 newfstatat: 1
 readlinkat: 1
@@ -73,7 +75,6 @@ getegid: 1
 fstat: 1
 mkdir: 1
 unlink: 1
-splice: 1
 symlink: 1
 readlink: 1
 getrlimit: 1
@@ -96,7 +97,6 @@ execve: 1
 fchmod: 1
 fstatfs: 1
 fsync: 1
-truncate: 1
 ftruncate: 1
 getcwd: 1
 getgid: 1
@@ -124,6 +124,7 @@ select: 1
 sendmsg: 1
 sendto: 1
 setsockopt: 1
+splice: 1
 set_tid_address: 1
 shmat: 1
 shmctl: 1
