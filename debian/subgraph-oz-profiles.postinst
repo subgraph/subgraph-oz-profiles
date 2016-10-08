@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # postinst script for oz-daemon
 #
 # see: dh_installdeb(1)
@@ -20,9 +20,10 @@ set -e
 
 case "$1" in
     configure)
-        for file in /var/lib/oz/cells.d/*.json; do bf=$(basename $file); /usr/sbin/oz-setup install --force ${bf%%.*}; done
-        if [ -d /run/systemd/system ]; then
-            systemctl restart oz-daemon.service || true
+        for file in /var/lib/oz/cells.d/*.json; do bf=$(basename $file); oz-setup install --force ${bf%%.*}; done
+        if [ -d /run/systemd/system -a deb-systemd-helper is-enabled oz-daemon.service ]; then
+            deb-systemd-helper restart oz-daemon.service
+            #systemctl restart oz-daemon.service || true
         fi
     ;;
 

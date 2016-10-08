@@ -1,9 +1,9 @@
 Source: subgraph-oz-profiles
-Section: security
+Section: admin
 Priority: optional
 Maintainer: Subgraph <info@subgraph.com>
-Build-Depends: debhelper (>= 9), dh-systemd
-Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 10), dh-systemd
+Standards-Version: 3.9.8
 Homepage: https://github.com/subgraph/subgraph-oz-profiles
 Vcs-Git: https://github.com/subgraph/subgraph-oz-profiles.git
 XS-Go-Import-Path: github.com/subgraph/subgraph-oz-profiles
@@ -14,7 +14,9 @@ Architecture: all
 Breaks: oz-daemon (<< 0.1.1-1)
 Provides: oz-profiles
 Depends: oz-daemon (>= 0.1.1-1), ${shlibs:Depends}, ${misc:Depends}
-Suggests: subgraph-oz-profiles
 Description: Subgraph OZ Sandboxing Profile
- This package contains curated OZ sandbox profiles
- and seccomp filters.
+ This package contains curated OZ sandbox profiles and seccomp filters.
+ These profiles are curated to provide sandboxes for various user
+ programs; such as torbrowser-launcher, evince, eog, coyim, and others.
+ Most of these profiles also include curated seccomp whitelists for
+ use with these sandboxes.

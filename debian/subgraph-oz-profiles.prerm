@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # prerm script for oz-daemon
 #
 # see: dh_installdeb(1)
@@ -20,7 +20,7 @@ set -e
 case "$1" in
     remove|upgrade|deconfigure)
         oz killall &>> /dev/null || true
-        for file in /var/lib/oz/cells.d/*.json; do bf=$(basename $file); /usr/sbin/oz-setup remove --force ${bf%%.*}; done
+        for file in /var/lib/oz/cells.d/*.json; do bf=$(basename $file); oz-setup remove --force ${bf%%.*}; done
     ;;
 
     failed-upgrade)
