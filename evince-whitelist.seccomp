@@ -73,6 +73,8 @@ fallocate: 1
 sysinfo:1
 flistxattr: 1
 fsync: 1
+getgid: 1
+getrandom: 1
 getcwd: 1
 getpeername: 1
 getpid: 1
