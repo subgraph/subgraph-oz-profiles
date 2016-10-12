@@ -12,8 +12,7 @@
 , "networking":{
 	"type": "empty"
 	, "sockets": [
-		 {"type": "client", "proto": "tcp", "port": 9050}
-	,	 {"type": "client", "proto": "tcp2unix", "port": 9051, "destination": "/var/run/roflcoptor/onionshare.socket"}
+		 {"type": "client", "proto": "tcp2unix", "port": 9051, "destination": "/var/run/roflcoptor/onionshare.socket"}
 	]
 }
 , "whitelist": [         {"path": "/var/lib/oz/cells.d/onionshare-gui-whitelist.seccomp"}
