@@ -1,4 +1,4 @@
-futex: arg1 == 129 || arg1 == 134 || arg1 == 135 || arg1 == 139 || arg1 == 140 || arg1 == 128 || arg1 == 393 || arg1 == 133 || arg1 == 132 || arg1 == 137 || arg1 == 0 
+futex: arg1 == 129 || arg1 == 134 || arg1 == 135 || arg1 == 139 || arg1 == 140 || arg1 == 128 || arg1 == 393 || arg1 == 133 || arg1 == 132 || arg1 == 137 || arg1 == 0 || arg1 == 7
 read:1
 poll:1
 write:1
