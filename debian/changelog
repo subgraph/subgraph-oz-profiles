@@ -1,3 +1,11 @@
+subgraph-oz-profiles (0.1.4-1) testing; urgency=high
+
+  * Fix Icedove profile to match new gnupg sockets
+  * Seccomp hit on futex in vlc
+  * No more tor proxy in onionshare
+
+ -- Subgraph <info@subgraph.com>  Mon, 24 OCt 2016 00:00:00 +0000
+
 subgraph-oz-profiles (0.1.3-1) testing; urgency=high
 
   * Fixed syscall for TorBrowser
