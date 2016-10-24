@@ -18,8 +18,11 @@ set -e
 
 
 case "$1" in
-    remove|upgrade|deconfigure)
+    remove)
         oz killall &>> /dev/null || true
+        for file in /var/lib/oz/cells.d/*.json; do bf=$(basename $file); oz-setup remove --force ${bf%%.*}; done
+    ;;
+    upgrade|deconfigure)
         for file in /var/lib/oz/cells.d/*.json; do bf=$(basename $file); oz-setup remove --force ${bf%%.*}; done
     ;;
 
