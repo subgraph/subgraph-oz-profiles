@@ -1,0 +1,27 @@
+{
+"name": "electrum"
+, "path": "/usr/bin/electrum"
+, "xserver": {
+	"enabled": true
+	, "enable_tray": false
+	, "tray_icon":"/usr/share/pixmaps/electrum.png"
+	, "enable_notifications": true
+}
+, "networking":{
+	"type":"empty"
+	, "sockets": [
+		{"type":"client", "proto":"tcp", "port":9050}
+	]
+}
+, "whitelist": [
+	{"path":"/home/user/.electrum", "can_create":true}
+]
+, "blacklist": [
+]
+, "environment": [
+]
+, "seccomp": {
+	"mode":"blacklist"
+	,"enforce":"true"
+}
+}
