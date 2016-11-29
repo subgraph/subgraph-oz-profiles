@@ -19,6 +19,7 @@ munmap: 1
 lstat: 1
 mprotect: 1
 fcntl: 1
+gettimeofday: 1
 getdents: 1
 pread64:1
 getrusage: 1
