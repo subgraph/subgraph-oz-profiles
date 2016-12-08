@@ -1,6 +1,6 @@
 {
 "name": "firefox"
-, "path": "/usr/bin/firefox-esr"
+, "path": "/usr/bin/firefox"
 , "xserver": {
 	"enabled": true
 	, "audio_mode": "pulseaudio"
