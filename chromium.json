@@ -1,0 +1,36 @@
+{
+"name": "chromium"
+, "path": "/usr/bin/chromium"
+, "default_params": [
+		"--disable-background-mode"
+		, "--disable-device-discovery"
+		, "--disable-gpu"
+		, "--host-resolver-rules='MAP * 0.0.0.0 , EXCLUDE 127.0.0.1'"
+		, "--proxy-server='socks5://127.0.0.1:1090'"
+	]
+, "xserver": {
+	"enabled": true
+	, "audio_mode": "pulseaudio"
+	, "enable_tray": false
+	, "tray_icon":"/usr/share/icons/hicolor/256x256/apps/chromium.png"
+	, "notifications": true
+}
+, "networking":{
+	"type":"empty"
+	, "sockets": [
+		{"type":"client", "proto":"tcp", "port":9050}
+	]
+}
+, "whitelist": [
+	{"path": "${XDG_DOWNLOAD_DIR}/Chromium", "can_create": true}
+	, {"path": "/usr/lib/chromium/chrome-sandbox", "allow_suid": true, "force": true}
+	, {"path": "${HOME}/.config/chromium", "can_create": true}
+]
+, "blacklist": [
+]
+, "environment": [
+]
+, "seccomp": {
+	"mode":"disabled"
+}
+}
