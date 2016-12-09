@@ -6,7 +6,7 @@
 		, "--disable-device-discovery"
 		, "--disable-gpu"
 		, "--host-resolver-rules='MAP * 0.0.0.0 , EXCLUDE 127.0.0.1'"
-		, "--proxy-server='socks5://127.0.0.1:1090'"
+		, "--proxy-server='socks5://127.0.0.1:9050'"
 	]
 , "xserver": {
 	"enabled": true
