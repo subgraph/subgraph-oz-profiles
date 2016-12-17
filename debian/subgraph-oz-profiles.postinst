@@ -20,7 +20,10 @@ set -e
 
 case "$1" in
     configure)
-        for file in /var/lib/oz/cells.d/*.json; do bf=$(basename $file); oz-setup install --force ${bf%%.*}; done
+        for file in /var/lib/oz/cells.d/*.json; do
+            bf=$(basename $file)
+            oz-setup install --force ${bf%%.*} || true
+        done
         if [ -d /run/systemd/system ]; then
             #deb-systemd-helper restart oz-daemon.service
             systemctl reload oz-daemon.service || true
