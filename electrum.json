@@ -22,6 +22,6 @@
 ]
 , "seccomp": {
 	"mode":"blacklist"
-	,"enforce":"true"
+	,"enforce":true
 }
 }
