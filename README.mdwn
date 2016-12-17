@@ -8,7 +8,7 @@ This repository contains a curated set of OZ profiles for [Subgraph OS](https://
 ```
 	# To build the Debian package:
 	git clone -b debian https://github.com/subgraph/subgraph-oz-profiles.git
-	cd fw-daemon
+	cd subgraph-oz-profiles
 	# To build from stable
 	gbp buildpackage -us -uc
 	# To buiild the latest tag
