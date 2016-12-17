@@ -1,3 +1,9 @@
+subgraph-oz-profiles (0.1.6-1) testing; urgency=high
+
+  * Fixed seccomp for electrum profile
+
+ -- Subgraph <info@subgraph.com>  Sat, 17 Dec 2016 22:20:00 +0000
+
 subgraph-oz-profiles (0.1.5-1) testing; urgency=high
 
   * Tentative policy for Electrum
