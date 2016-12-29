@@ -24,7 +24,6 @@
 , "whitelist": [
 	{"path": "${XDG_DOWNLOAD_DIR}/Chromium", "can_create": true}
 	, {"path": "/usr/lib/chromium/chrome-sandbox", "allow_suid": true, "force": true}
-	, {"path": "${HOME}/.config/chromium", "can_create": true}
 ]
 , "blacklist": [
 ]
