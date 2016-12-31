@@ -1,3 +1,9 @@
+subgraph-oz-profiles (0.1.7-1) testing; urgency=high
+
+  * Update to setsockopt(2) whitelist entry for onionshare-gui.
+
+ -- Subgraph <info@subgraph.com>  Sat, 31 Dec 2016 18:45:00 +0000
+
 subgraph-oz-profiles (0.1.6-1) testing; urgency=high
 
   * Fixed seccomp for electrum profile
