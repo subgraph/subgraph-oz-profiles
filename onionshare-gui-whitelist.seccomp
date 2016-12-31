@@ -117,7 +117,7 @@ getdents:1
 getdents64:1
 getrandom:1
 fdatasync:1
-setsockopt:arg1 == 1 && arg2 == 2
+setsockopt:(arg1 == 1 && arg2 == 2) || (arg1 == 6 && arg2 == 1)
 set_tid_address:1
 mremap:1
 sched_setscheduler:1
