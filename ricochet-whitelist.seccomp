@@ -141,6 +141,7 @@ sysinfo:1
 inotify_init1:1
 getgroups:1
 clock_getres:1
+clock_gettime:1
 chdir:1
 epoll_ctl:1
 epoll_create1:1
