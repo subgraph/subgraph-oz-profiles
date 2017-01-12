@@ -1,3 +1,7 @@
+SO_REUSEPORT=15
+SOL_NETLINK=270
+NETLINK_PKTINFO=3
+
 recvmsg:1
 poll:1
 writev:1
@@ -35,7 +39,7 @@ exit:1
 unlink:1
 rename:1
 fsync:1
-socket: arg0 == 1 || arg0 == 2 || arg0 == 16 || arg0 == 10 
+socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_INET6 || arg0 == AF_NETLINK
 eventfd2:1
 connect:1
 dup2:1
@@ -90,7 +94,7 @@ sigaltstack:1
 socketpair:1
 faccessat:1
 getrlimit:1
-setsockopt: arg2 == 3 || arg2 == 2 || arg2 == 15 || arg2 == 1 
+setsockopt: (arg1 == SOL_SOCKET && (arg2 == SO_REUSEADDR || arg2 == SO_REUSEPORT)) || (arg1 == SOL_TCP && (arg2 == TCP_NODELAY)) || (arg1 == SOL_NETLINK && (arg2 == NETLINK_PKTINFO)) 
 shmget:1
 epoll_wait:1
 restart_syscall:1
