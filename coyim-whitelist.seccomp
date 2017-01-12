@@ -1,3 +1,5 @@
+TCGETS=0x5401
+
 mincore:1
 recvmsg:1
 poll:1
@@ -57,7 +59,7 @@ epoll_ctl:1
 getsockopt:1
 restart_syscall:1
 set_tid_address:1
-ioctl: arg1 == 21505 
+ioctl: arg1 == TCGETS
 pipe2:1
 eventfd2:1
 setsockopt: (arg1 == SOL_SOCKET && (arg2 == SO_BROADCAST || arg2 == SO_DEBUG || arg2 == SO_ATTACH_FILTER)) || (arg1 == IPPROTO_TCP && arg2 == TCP_NODELAY) || (arg1 == SOL_IPV6 && arg2 == IPV6_V6ONLY)
