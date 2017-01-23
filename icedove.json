@@ -13,7 +13,6 @@
 }
 , "whitelist": [
 	{"path":"/run/resolvconf"}
-	, {"path":"/run/user/${UID}/keyring", "ignore":true}
         , {"path": "/run/user/${UID}/gnupg/S.gpg-agent.extra", "target": "/run/user/${UID}/gnupg/S.gpg-agent", "force": true}
 
 	, {"path":"${HOME}/.cache/icedove", "can_create":true}
