@@ -17,7 +17,7 @@
 	, {"path":"/run/user/${UID}/gnupg", "ignore":true}
 	, {"path":"${HOME}/.cache/icedove", "can_create":true}
 
-	, {"path":"${HOME}/.gnupg", "ignore":true}
+	, {"path":"${HOME}/.gnupg/pubring.gpg", "ignore":true}
 	, {"path":"${HOME}/.gnupg/gpg-agent.conf", "read_only": true, "force":true, "ignore": true}
 	, {"path":"${HOME}/.gnupg/gpg.conf", "read_only": true, "force":true, "ignore":true}
 
