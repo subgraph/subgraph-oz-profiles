@@ -1,3 +1,11 @@
+subgraph-oz-profiles (0.1.8-1) testing; urgency=high
+
+  * Seccomp updates to icedove
+  * Seccomp updates to LibreOffice
+  * Icedove profile updated for complete gpg2 migrtion removing access to keys
+
+ -- Subgraph <info@subgraph.com>  Tue, 24 Jan 2016 02:00:00 +0000
+
 subgraph-oz-profiles (0.1.7-1) testing; urgency=high
 
   * Update to setsockopt(2) whitelist entry for onionshare-gui.
