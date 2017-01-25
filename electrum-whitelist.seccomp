@@ -42,7 +42,7 @@ mprotect:1
 poll:1
 lseek:1
 close:1
-futex: (arg1 == FUTEX_WAKE|FUTEX_PRIVATE_FLAG) || (arg1 == FUTEX_WAKE|FUTEX_TRYLOCK_PI|FUTEX_WAIT_BITSET|FUTEX_PRIVATE_FLAG|FUTEX_CLOCK_REALTIME) || (arg1 == FUTEX_WAIT_PRIVATE) || (arg1 == FUTEX_CMP_REQUEUE_PRIVATE)
+futex: (arg1 == FUTEX_WAKE|FUTEX_PRIVATE_FLAG) || (arg1 == FUTEX_WAKE|FUTEX_TRYLOCK_PI|FUTEX_WAIT_BITSET|FUTEX_PRIVATE_FLAG|FUTEX_CLOCK_REALTIME) || (arg1 == FUTEX_WAIT_PRIVATE) || (arg1 == FUTEX_CMP_REQUEUE_PRIVATE) || (arg1 == FUTEX_WAKE_OP_PRIVATE)
 writev:1
 mmap:1
 access:1
@@ -66,7 +66,7 @@ set_robust_list:1
 clone:1
 getsockname:1
 getpeername:1
-setsockopt: (arg1 == 1 && arg2 == SO_REUSEADDR) || (arg1 == 1 && arg2 == SO_KEEPALIVE)
+setsockopt: (arg1 == SOL_SOCKET && (arg2 == SO_REUSEADDR || arg2 == SO_KEEPALIVE))
 getsockopt:1
 madvise:1
 exit:1
@@ -78,6 +78,7 @@ readlink:1
 statfs:1
 geteuid:1
 shmctl:1
+dup:1
 dup2:1
 shmget:1
 getrandom:1
@@ -86,6 +87,7 @@ arch_prctl:1
 setrlimit:1
 exit_group:1
 shmat:1
+restart_syscall:1
 shmdt:1
 rename:1
 rt_sigprocmask:1
