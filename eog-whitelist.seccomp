@@ -1,3 +1,5 @@
+TCGETS=0x5401
+
 recvmsg: 1
 poll: 1
 writev: 1
@@ -35,7 +37,7 @@ set_robust_list: 1
 fadvise64: 1
 inotify_add_watch: 1
 chmod: 1
-ioctl: arg1 == 1074041865 || arg1 == 21505
+ioctl: arg1 == 1074041865 || arg1 == TCGETS
 restart_syscall:1
 arch_prctl: 1
 bind: 1
