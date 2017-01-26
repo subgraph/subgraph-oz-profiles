@@ -19,7 +19,7 @@
 
 	, {"path":"${HOME}/.gnupg/pubring.gpg", "read_only":true, "ignore":true}
 	, {"path":"${HOME}/.gnupg/pubring.kbx", "read_only":true, "ignore":true}
-	, {"path":"${HOME}/.gnupg/trustdb.gpg", "read_only": true, "ignore": true}
+	, {"path":"${HOME}/.gnupg/trustdb.gpg", "ignore": true}
 	, {"path":"${HOME}/.gnupg/gpg-agent.conf", "read_only": true, "force":true, "ignore": true}
 	, {"path":"${HOME}/.gnupg/gpg.conf", "read_only": true, "force":true, "ignore":true}
 
