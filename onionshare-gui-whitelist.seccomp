@@ -126,6 +126,7 @@ sysinfo:1
 flock:1
 rt_sigprocmask:1
 sigaltstack:1
+restart_syscall:1
 tgkill:1
 getrusage:1
 getppid:1
