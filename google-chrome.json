@@ -1,0 +1,39 @@
+{
+"name": "google-chrome-stable"
+, "path": "/usr/bin/google-chrome-stable"
+, "reject_user_args": true
+, "default_params": [
+		"--disable-background-mode"
+		, "--disable-device-discovery"
+		, "--disable-gpu"
+		, "--incognito"
+		, "file:///var/lib/sgos/news/news.html"
+	]
+, "xserver": {
+	"enabled": true
+	, "audio_mode": "pulseaudio"
+	, "enable_tray": false
+	, "tray_icon":"/usr/share/icons/hicolor/256x256/apps/google-chrome.png"
+	, "notifications": true
+}
+, "networking":{
+	"type":"bridge"
+	,"bridge":"clear"
+}
+, "whitelist": [
+	{"path": "/var/lib/sgos/news/", "ignore":true}
+	, {"path": "${XDG_DOWNLOAD_DIR}/Chrome", "can_create": true}
+	, {"path": "/opt/google/chrome/", "read_only": true, "allow_suid": true, "force": true}
+	, {"path": "${HOME}/.config/google-chrome", "can_create": true}
+	, {"path": "/var/run/NetworkManager/", "target": "/run/resolvconf/", "force": true}
+]
+, "blacklist": [
+	{"path": "/run/resolvconf/private-dhcp"}
+
+]
+, "environment": [
+]
+, "seccomp": {
+	"mode":"disabled"
+}
+}
