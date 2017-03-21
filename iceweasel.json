@@ -15,12 +15,12 @@
 , "whitelist": [
 	{"path":"${HOME}/.mozilla", "can_create": true}
 	, {"_path":"${HOME}/.cache/mozilla", "can_create":true}
-	, {"path":"${XDG_DOWNLOAD_DIR}/Iceweasel", "can_create":true}
 
 	, {"path":"/var/lib/oz/cells.d/iceweasel-whitelist.seccomp", "read_only": true}
 	, {"path":"/var/lib/oz/cells.d/iceweasel.json", "read_only": true}
 ]
-, "blacklist": [
+, "shared_folders": [
+	"${XDG_DOWNLOAD_DIR}"
 ]
 , "environment": [
 ]

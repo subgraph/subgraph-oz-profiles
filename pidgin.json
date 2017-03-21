@@ -13,11 +13,11 @@
 }
 , "whitelist": [
 	{"path":"${HOME}/.purple", "can_create":true}
-	, {"path":"${XDG_DOWNLOAD_DIR}/Pidgin", "can_create":true}
 	, {"path":"/var/lib/oz/cells.d/pidgin.json", "read_only": true}
 	, {"path":"/var/lib/oz/cells.d/pidgin-whitelist.seccomp", "read_only": true}
 ]
-, "blacklist": [
+, "shared_folders": [
+	"${XDG_DOWNLOAD_DIR}"
 ]
 , "environment": [
 ]

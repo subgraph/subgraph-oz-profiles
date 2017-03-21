@@ -12,9 +12,9 @@
 }
 , "whitelist": [
 	{"path": "${HOME}/.local/share/shotwell/", "can_create": true}
-	, {"path": "${XDG_PICTURES_DIR}"}
 ]
-, "blacklist": [
+, "shared_folders": [
+	"${XDG_PICTURES_DIR}"
 ]
 , "environment": [
 	{"name":"GTK_THEME", "value":"Adwaita:dark"}

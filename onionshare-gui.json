@@ -15,7 +15,11 @@
 		 {"type": "client", "proto": "tcp2unix", "port": 9051, "destination": "/var/run/roflcoptor/onionshare.socket"}
 	]
 }
-, "whitelist": [         {"path": "/var/lib/oz/cells.d/onionshare-gui-whitelist.seccomp"}
+, "external_forwarders": [
+	{"name":"dynamic-onionshare-server", "dynamic":true, "multi":true, "proto":"tcp", "targethost":"127.0.0.1", "extproto":"unix", "socketowner":"debian-tor"}
+]
+, "whitelist": [
+	{"path": "/var/lib/oz/cells.d/onionshare-gui-whitelist.seccomp"}
 ]
 , "environment": []
 , "seccomp": {
@@ -23,8 +27,5 @@
 	, "whitelist":"/var/lib/oz/cells.d/onionshare-gui-whitelist.seccomp"
 	, "enforce": true
 }
-, "external_forwarders": [
-	{"name":"dynamic-onionshare-server", "dynamic":true, "multi":true, "proto":"tcp", "targethost":"127.0.0.1", "extproto":"unix", "socketowner":"debian-tor"}
-	]
 }
 
