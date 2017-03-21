@@ -1,6 +1,7 @@
 {
 "name": "chromium"
 , "path": "/usr/bin/chromium"
+, "reject_user_args": true
 , "default_params": [
 ]
 , "xserver": {

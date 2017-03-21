@@ -1,6 +1,7 @@
 {
 "name": "chronion"
 , "path": "/usr/bin/chronion"
+, "reject_user_args": true
 , "default_params": [
 ]
 , "xserver": {
