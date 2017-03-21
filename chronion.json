@@ -1,0 +1,37 @@
+{
+"name": "chronion"
+, "path": "/usr/bin/chronion"
+, "default_params": [
+]
+, "xserver": {
+	"enabled": true
+	, "audio_mode": "pulseaudio"
+	, "tray_icon":"/usr/share/icons/hicolor/256x256/apps/chronion.png"
+	, "notifications": true
+}
+, "networking":{
+	"type":"empty"
+	, "sockets": [
+		{"type":"client", "proto":"tcp", "port":9050}
+	]
+}
+, "whitelist": [
+	{"path": "${HOME}/.config/chronion", "target": "${HOME}/.config/chromium", "can_create": true}
+	, {"path": "/usr/share/chronion/default-flags", "target": "/etc/chromium.d/default-flags", "read_only": true, "force": true}
+	, {"path": "/usr/share/chronion/master_preferences", "target": "/usr/share/chromium/master_preferences", "read_only": true, "force": true}
+	, {"path": "/usr/lib/chromium/chrome-sandbox", "allow_suid": true, "force": true}
+	, {"path": "/var/lib/dpkg/status", "read_only": true}
+	, {"path": "/var/lib/dpkg/updates/", "read_only": true}
+	, {"path": "/var/lib/dpkg/diversions", "read_only": true}
+]
+, "shared_folders": [
+	"${XDG_DOWNLOAD_DIR}"
+]
+, "blacklist": [
+]
+, "environment": [
+]
+, "seccomp": {
+	"mode":"disabled"
+}
+}
