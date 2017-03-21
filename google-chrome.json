@@ -22,14 +22,15 @@
 }
 , "whitelist": [
 	{"path": "/var/lib/sgos/news/", "ignore":true}
-	, {"path": "${XDG_DOWNLOAD_DIR}/Chrome", "can_create": true}
 	, {"path": "/opt/google/chrome/", "read_only": true, "allow_suid": true, "force": true}
 	, {"path": "${HOME}/.config/google-chrome", "can_create": true}
 	, {"path": "/var/run/NetworkManager/", "target": "/run/resolvconf/", "force": true}
 ]
+, "shared_folders": [
+	"${XDG_DOWNLOAD_DIR}"
+]
 , "blacklist": [
 	{"path": "/run/resolvconf/private-dhcp"}
-
 ]
 , "environment": [
 ]
