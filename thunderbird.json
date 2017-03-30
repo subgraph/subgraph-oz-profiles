@@ -12,9 +12,7 @@
 	]
 }
 , "whitelist": [
-	{"path": "/etc/xul-ext/", "read_only": true, "ignore": true}
-
-	, {"path": "/run/user/${UID}/gnupg/S.gpg-agent.extra", "target": "/run/user/${UID}/gnupg/S.gpg-agent", "read_only":true, "force": true}
+	{"path": "/run/user/${UID}/gnupg/S.gpg-agent.extra", "target": "/run/user/${UID}/gnupg/S.gpg-agent", "read_only":true, "force": true}
 	, {"path": "/run/user/${UID}/gnupg/S.dirmngr", "read_only":true}
 
 	, {"path":"${HOME}/.cache/thunderbird", "can_create":true}
