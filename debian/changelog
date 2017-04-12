@@ -2,14 +2,14 @@ subgraph-oz-profiles (0.1.9-1) testing; urgency=high
 
   * trustdb unfortunately has to be writeable unless no-auto-check-trustdb is set
 
- -- Subgraph <info@subgraph.com> Fri, 27 Jan 2017 00:32:00 +0000
+ -- Subgraph <info@subgraph.com>  Fri, 27 Jan 2017 00:32:00 +0000
 
 subgraph-oz-profiles (0.1.8-1) testing; urgency=high
 
   * Improvements to icedove sandbox profile; rely on gpg-agent for decryption/signing.
   * Clean-up of seccomp whitelists.
 
- -- Subgraph <info@subgraph.com> Wed, 25 Jan 2017 23:53:00 +0000
+ -- Subgraph <info@subgraph.com>  Wed, 25 Jan 2017 23:53:00 +0000
 
 subgraph-oz-profiles (0.1.7-1) testing; urgency=high
 
