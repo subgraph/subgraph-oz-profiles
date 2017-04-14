@@ -3,6 +3,11 @@
 , "path": "/usr/bin/chromium"
 , "reject_user_args": true
 , "default_params": [
+	"--disable-background-mode"
+	, "--disable-device-discovery"
+	, "--disable-gpu"
+	, "--incognito"
+	, "file:///usr/share/sgos/landing/clearnet.html"
 ]
 , "xserver": {
 	"enabled": true
