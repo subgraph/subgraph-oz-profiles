@@ -7,15 +7,19 @@
 , "xserver": {
 	"enabled": true
 	, "audio_mode": "pulseaudio"
-	, "tray_icon":"/usr/share/icons/hicolor/256x256/apps/chronion.png"
+	, "tray_icon":"/usr/share/icons/hicolor/256x256/apps/chromium.png"
 	, "notifications": true
 }
 , "networking":{
-	"type":"bridge"
+	"type": "bridge"
 	, "bridge": "clear"
 }
 , "whitelist": [
-	{"path": "/usr/lib/chromium/chrome-sandbox", "allow_suid": true, "force": true}
+	{"path": "/etc/chromium.d/", "read_only": true, "ignore": true}
+
+	, {"path": "/var/run/NetworkManager/resolv.conf", "target": "/run/resolvconf/resolv.conf", "force": true}
+	, {"path": "/usr/lib/chromium/chrome-sandbox", "allow_suid": true, "force": true}
+
 	, {"path": "${HOME}/.config/chromium", "can_create": true}
 ]
 , "shared_folders": [

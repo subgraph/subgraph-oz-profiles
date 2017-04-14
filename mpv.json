@@ -11,7 +11,9 @@
 	"type":"empty"
 }
 , "whitelist": [
-	{"path":"${HOME}/.config/mpv", "can_create":true}
+	{"path": "/etc/mpv", "read_only": true, "ignore": true}
+
+	, {"path": "${HOME}/.config/mpv", "can_create": true}
 ]
 , "blacklist": [
 ]

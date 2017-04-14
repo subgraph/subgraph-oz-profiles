@@ -12,7 +12,9 @@
 	]
 }
 , "whitelist": [
-	{"path":"/run/resolvconf"}
+	{"path": "/etc/icedove/", "read_only": true, "ignore": true}
+	, {"path": "/etc/xul-ext/", "read_only": true, "ignore": true}
+
 	, {"path": "/run/user/${UID}/gnupg/S.gpg-agent.extra", "target": "/run/user/${UID}/gnupg/S.gpg-agent", "read_only":true, "force": true}
 
 	, {"path":"${HOME}/.cache/icedove", "can_create":true}
