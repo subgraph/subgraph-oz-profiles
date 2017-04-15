@@ -142,4 +142,4 @@ setresgid: 1
 capget: 1
 getdents64: 1
 inotify_rm_watch: 1
-socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_INET6 || arg0 == AF_NETLINK
+socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_INET6 || (arg0 == AF_NETLINK && arg2 == 0)

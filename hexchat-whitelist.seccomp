@@ -56,7 +56,7 @@ recvfrom:1
 mkdir:1
 eventfd2:1
 uname:1
-socket: arg0 == 1 || arg0 == 2 || arg0 == 10 || arg0 == 16 
+socket: arg0 == 1 || arg0 == 2 || arg0 == 10 || (arg0 == 16 && arg2 == 0)
 lstat:1
 rt_sigaction:1
 connect:1

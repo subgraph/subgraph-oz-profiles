@@ -142,5 +142,5 @@ statfs: 1
 rt_tgsigqueueinfo: 1
 umask: 1
 utime: 1
-socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_INET6 || arg0 == AF_NETLINK 
+socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_INET6 || (arg0 == AF_NETLINK && arg2 == 0)
 rmdir: 1

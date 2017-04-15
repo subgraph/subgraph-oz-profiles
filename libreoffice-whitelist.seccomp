@@ -39,7 +39,7 @@ exit:1
 unlink:1
 rename:1
 fsync:1
-socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_INET6 || arg0 == AF_NETLINK
+socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_INET6 || (arg0 == AF_NETLINK && arg2 == 0)
 eventfd2:1
 connect:1
 dup2:1
