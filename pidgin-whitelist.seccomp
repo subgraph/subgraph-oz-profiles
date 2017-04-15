@@ -86,7 +86,7 @@ recvmsg:1
 setsid:1
 setresgid:1
 open:1
-socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_NETLINK
+socket: arg0 == AF_UNIX || arg0 == AF_INET || (arg0 == AF_NETLINK && arg2 == 0)
 mkdir:1
 geteuid:1
 setresuid:1
