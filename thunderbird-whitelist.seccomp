@@ -39,8 +39,6 @@ seccomp:1
 pselect6:1
 clock_gettime:1
 getpid:1
-getppid:1
-getpgrp:1
 mremap: 1
 pwrite64:1
 mincore: 1
@@ -118,7 +116,8 @@ inotify_add_watch: 1
 inotify_init1: 1
 inotify_rm_watch: 1
 # ioctl: FIONREAD
-ioctl: arg1 == TCGETS || arg1 == FIONREAD || arg1 == TIOCGPGRP
+#ioctl: arg1 == TCGETS || arg1 == FIONREAD
+ioctl: 1
 link: 1
 openat: 1
 pipe2: 1
@@ -144,5 +143,8 @@ statfs: 1
 rt_tgsigqueueinfo: 1
 umask: 1
 utime: 1
-socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_INET6 || (arg0 == AF_NETLINK && arg2 == 0)
+socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_INET6 || arg0 == AF_NETLINK 
 rmdir: 1
+getppid: 1
+getpgrp: 1
+faccessat: 1
