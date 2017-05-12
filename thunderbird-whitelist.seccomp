@@ -1,3 +1,4 @@
+TIOCGPGRP=21519
 TCGETS=0x5401
 FIONREAD=0x541B
 SOL_NETLINK=270
@@ -87,6 +88,7 @@ getrlimit: 1
 arch_prctl: 1
 pipe: 1
 uname: 1
+faccessat: 1
 exit_group: 1
 memfd_create:1
 sysinfo:1
@@ -116,8 +118,7 @@ inotify_add_watch: 1
 inotify_init1: 1
 inotify_rm_watch: 1
 # ioctl: FIONREAD
-#ioctl: arg1 == TCGETS || arg1 == FIONREAD
-ioctl: 1
+ioctl: arg1 == TCGETS || arg1 == FIONREAD || arg1 == TIOCGPGRP
 link: 1
 openat: 1
 pipe2: 1
@@ -139,12 +140,11 @@ shmdt: 1
 shmget: 1
 shutdown: 1
 socketpair: 1
+getpgrp: 1
+getppid: 1
 statfs: 1
 rt_tgsigqueueinfo: 1
 umask: 1
 utime: 1
-socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_INET6 || arg0 == AF_NETLINK 
+socket: arg0 == AF_UNIX || arg0 == AF_INET || arg0 == AF_INET6 || (arg0 == AF_NETLINK && arg2 == 0)
 rmdir: 1
-getppid: 1
-getpgrp: 1
-faccessat: 1
