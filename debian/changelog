@@ -1,4 +1,4 @@
-subgraph-oz-profiles (0.2.2-1) testing; urgency=medium
+subgraph-oz-profiles (0.2.2-1.1) testing; urgency=medium
 
   * Non-maintainer upload.
   * Updated to version v0.2.2.
@@ -6,12 +6,24 @@ subgraph-oz-profiles (0.2.2-1) testing; urgency=medium
 
  -- David McKinney <mckinney@subgraph.com>  Sun, 11 Jun 2017 01:15:14 +0000
 
-subgraph-oz-profiles (0.2.1-1) testing; urgency=high
+subgraph-oz-profiles (0.2.1-1.1) testing; urgency=high
 
   * Fixed whitelists/made improvements 
   * Thunderbird transition 
 
  -- Subgraph <info@subgraph.com> Sat 10 Jun 2017 17:24:00 +0000
+
+subgraph-oz-profiles (0.2.0-1.1) testing; urgency=medium
+
+  * All profiles updated for strict-etc feature
+  * All profiles updated for shared-folders feature
+  * Added thunderbird profile and whitelist
+  * Removed deprecated profile for icedove (paths added to thunderbird)
+  * Seccomp fixes for onionshare
+  * Added chronion profile
+  * Remove outdated xchat profile
+
+ -- Subgraph <info@subgraph.com>  Sat, 13 May 2017 20:15:12 +0000
 
 subgraph-oz-profiles (0.1.9-1) testing; urgency=high
 
