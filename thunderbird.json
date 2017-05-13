@@ -9,14 +9,17 @@
 	, "tray_icon": "/usr/share/icons/hicolor/scalable/apps/thunderbird.svg"
 }
 , "networking":{
-	"type":"empty"
+	"type": "empty"
 	, "sockets": [
 		{"type":"client", "proto":"tcp", "port":9050}
 	]
 }
 , "whitelist": [
-	{"path":"/run/resolvconf"}
-        , {"path": "/run/user/${UID}/gnupg/S.gpg-agent.extra", "target": "/run/user/${UID}/gnupg/S.gpg-agent", "read_only":true, "force": true}
+	, {"path": "/etc/thunderbird/", "read_only": true, "ignore": true}
+	, {"path": "/etc/xul-ext/", "read_only": true, "ignore": true}
+
+	, {"path": "/run/user/${UID}/gnupg/S.gpg-agent.extra", "target": "/run/user/${UID}/gnupg/S.gpg-agent", "read_only":true, "force": true}
+	, {"path": "/run/user/${UID}/gnupg/S.dirmngr", "read_only":true}
 
 	, {"path":"${HOME}/.cache/thunderbird", "can_create":true}
 
