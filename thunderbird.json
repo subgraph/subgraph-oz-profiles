@@ -1,22 +1,22 @@
 {
 "path": "/usr/bin/thunderbird"
+, "paths": [
+	"/usr/bin/icedove"
+]
 , "xserver": {
 	"enabled": true
 	, "enable_tray": false
 	, "tray_icon": "/usr/share/icons/hicolor/scalable/apps/thunderbird.svg"
 }
 , "networking":{
-	"type": "empty"
+	"type":"empty"
 	, "sockets": [
 		{"type":"client", "proto":"tcp", "port":9050}
 	]
 }
 , "whitelist": [
-	{"path": "/etc/thunderbird/", "read_only": true, "ignore": true}
-	, {"path": "/etc/xul-ext/", "read_only": true, "ignore": true}
-
-	, {"path": "/run/user/${UID}/gnupg/S.gpg-agent.extra", "target": "/run/user/${UID}/gnupg/S.gpg-agent", "read_only":true, "force": true}
-	, {"path": "/run/user/${UID}/gnupg/S.dirmngr", "read_only":true}
+	{"path":"/run/resolvconf"}
+        , {"path": "/run/user/${UID}/gnupg/S.gpg-agent.extra", "target": "/run/user/${UID}/gnupg/S.gpg-agent", "read_only":true, "force": true}
 
 	, {"path":"${HOME}/.cache/thunderbird", "can_create":true}
 
@@ -27,6 +27,7 @@
 	, {"path":"${HOME}/.gnupg/gpg.conf", "read_only": true, "force":true, "ignore":true}
 
 	, {"path":"${HOME}/.thunderbird", "can_create":true}
+	, {"path":"${HOME}/.icedove", "ignore":true}
 
 	, {"path":"/var/lib/oz/cells.d/thunderbird-whitelist.seccomp", "read_only": true}
 	, {"path":"/var/lib/oz/cells.d/thunderbird.json", "read_only": true}
