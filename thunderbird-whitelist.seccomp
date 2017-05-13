@@ -40,6 +40,8 @@ seccomp:1
 pselect6:1
 clock_gettime:1
 getpid:1
+getppid:1
+getpgrp:1
 mremap: 1
 pwrite64:1
 mincore: 1
