@@ -108,3 +108,6 @@ tgkill: 1
 unlink: 1
 utimes: 1
 wait4: 1
+#Print to file
+fchmod:1
+getrandom:1

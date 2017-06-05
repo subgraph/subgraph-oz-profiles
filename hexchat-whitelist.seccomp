@@ -120,3 +120,7 @@ fsync:1
 fchown:1
 getcwd:1
 getpid:1
+getrandom:1
+# OTR plugin
+umask:1
+rt_sigreturn:1
