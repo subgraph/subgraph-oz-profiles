@@ -1,7 +1,7 @@
 subgraph-oz-profiles (0.2.1-1) testing; urgency=high
 
   * Fixed whitelists/made improvements 
-  * Thunderbird transition
+  * Thunderbird transition 
 
  -- Subgraph <info@subgraph.com> Sat 10 Jun 2017 17:24:00 +0000
 
