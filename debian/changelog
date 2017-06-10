@@ -1,4 +1,4 @@
-subgraph-oz-profiles (0.2.10-1) testing; urgency=high
+subgraph-oz-profiles (0.1.10-1) testing; urgency=high
 
   * Fixed whitelists/made improvements 
   * Thunderbird transition
