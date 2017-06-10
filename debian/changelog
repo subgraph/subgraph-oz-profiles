@@ -1,3 +1,10 @@
+subgraph-oz-profiles (0.2.10-1) testing; urgency=high
+
+  * Fixed whitelists/made improvements 
+  * Thunderbird transition
+
+ -- Subgraph <info@subgraph.com> Sat 10 Jun 2017 17:24:00 +0000
+
 subgraph-oz-profiles (0.1.9-1) testing; urgency=high
 
   * trustdb unfortunately has to be writeable unless no-auto-check-trustdb is set
