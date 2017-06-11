@@ -1,3 +1,9 @@
+subgraph-oz-profiles (0.2.3-1.1) testing; urgency=medium
+
+  * Adding syscalls for eog, evince, libreoffice
+
+ -- Subgraph <info@subgraph.com>  Sun, 11 Jun 2017 15:58:42 +0000
+
 subgraph-oz-profiles (0.2.2-1.1) testing; urgency=medium
 
   * Non-maintainer upload.
