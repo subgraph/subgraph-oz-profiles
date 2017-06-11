@@ -1,3 +1,11 @@
+subgraph-oz-profiles (0.2.2-1) testing; urgency=medium
+
+  * Non-maintainer upload.
+  * Updated to version v0.2.2.
+  * Updated policies for eog, hexchat, and onionshare-gui
+
+ -- David McKinney <mckinney@subgraph.com>  Sun, 11 Jun 2017 01:15:14 +0000
+
 subgraph-oz-profiles (0.2.1-1) testing; urgency=high
 
   * Fixed whitelists/made improvements 
