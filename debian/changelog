@@ -1,6 +1,6 @@
 subgraph-oz-profiles (0.2.3-1.1) testing; urgency=medium
 
-  * Adding syscalls for eog, evince, libreoffice
+  * Adding clock_gettime and gettimeofday syscalls to all whitelists
 
  -- Subgraph <info@subgraph.com>  Sun, 11 Jun 2017 15:58:42 +0000
 
