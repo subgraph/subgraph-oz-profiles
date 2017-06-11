@@ -111,3 +111,5 @@ uname: 1
 unlink: 1
 utimes: 1
 wait4: 1
+clock_gettime: 1
+gettimeofday: 1
