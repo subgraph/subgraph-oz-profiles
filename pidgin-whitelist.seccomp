@@ -113,3 +113,4 @@ inotify_init1:1
 umask:1
 ftruncate:1
 read:1
+gettimeofday: 1

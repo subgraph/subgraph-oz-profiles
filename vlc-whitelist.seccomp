@@ -117,3 +117,5 @@ restart_syscall:1
 symlink:1
 rt_sigsuspend:1
 personality:1
+clock_gettime: 1
+gettimeofday: 1

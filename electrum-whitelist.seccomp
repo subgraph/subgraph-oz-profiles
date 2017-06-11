@@ -123,3 +123,5 @@ getppid:1
 getrusage:1
 execve:1
 vfork:1
+clock_gettime: 1
+gettimeofday: 1

@@ -151,3 +151,4 @@ setsid:1
 listen:1
 inotify_rm_watch:1
 execve:1
+gettimeofday: 1

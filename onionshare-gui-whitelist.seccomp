@@ -133,3 +133,5 @@ getppid:1
 getpid:1
 getsockopt:1
 execve:1
+clock_gettime: 1
+gettimeofday: 1
