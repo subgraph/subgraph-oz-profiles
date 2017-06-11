@@ -111,3 +111,5 @@ wait4: 1
 #Print to file
 fchmod:1
 getrandom:1
+clock_gettime: 1
+gettimeofday: 1

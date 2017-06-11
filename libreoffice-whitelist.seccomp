@@ -116,3 +116,5 @@ nanosleep:1
 inotify_add_watch:1
 arch_prctl:1
 shmdt:1
+clock_gettime: 1
+gettimeofday: 1
