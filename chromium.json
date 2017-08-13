@@ -22,7 +22,7 @@
 , "whitelist": [
 	{"path": "/etc/chromium.d/", "read_only": true, "ignore": true}
 
-	, {"path": "/var/run/NetworkManager/resolv.conf", "target": "/run/resolvconf/resolv.conf", "force": true}
+	, {"path": "/var/run/NetworkManager/", "target": "/run/resolvconf/", "force": true}
 	, {"path": "/usr/lib/chromium/chrome-sandbox", "allow_suid": true, "force": true}
 
 	, {"path": "${HOME}/.config/chromium", "can_create": true}
@@ -31,6 +31,9 @@
 	"${XDG_DOWNLOAD_DIR}"
 ]
 , "blacklist": [
+	{"path":"/run/resolvconf/private-dhcp"}
+	,{"path":"/run/resolvconf/devices"}
+
 ]
 , "environment": [
 ]
