@@ -11,6 +11,6 @@ This repository contains a curated set of OZ profiles for [Subgraph OS](https://
 	cd subgraph-oz-profiles
 	# To build from stable
 	gbp buildpackage -us -uc
-	# To buiild the latest tag
+	# To build the latest tag
 	gbp buildpackage -us -uc --git-upstream-tree=master
 ```
