@@ -14,7 +14,7 @@
 	]
 }
 , "whitelist": [
-	{"path":"/home/user/.electrum", "can_create":true}
+	{"path":"${HOME}/.electrum", "can_create":true}
 ]
 , "blacklist": [
 ]
