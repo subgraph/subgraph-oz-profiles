@@ -1,0 +1,118 @@
+TIOCGWINSZ=0x5413
+TIOCGPGRP=21519
+TCGETS=0x5401
+FIONREAD=0x541B
+
+FUTEX_WAIT=0
+FUTEX_WAKE=1
+FUTEX_FD=2
+FUTEX_REQUEUE=3
+FUTEX_CMP_REQUEUE=4
+FUTEX_WAKE_OP=5
+FUTEX_LOCK_PI=6
+FUTEX_UNLOCK_PI=7
+FUTEX_TRYLOCK_PI=8
+FUTEX_WAIT_BITSET=9
+FUTEX_WAKE_BITSET=10
+FUTEX_WAIT_REQUEUE_PI=11
+FUTEX_CMP_REQUEUE_PI=12
+
+FUTEX_PRIVATE_FLAG=128
+FUTEX_CLOCK_REALTIME=256
+FUTEX_CMD_MASK=~(FUTEX_PRIVATE_FLAG | FUTEX_CLOCK_REALTIME)
+
+FUTEX_WAIT_PRIVATE=(FUTEX_WAIT | FUTEX_PRIVATE_FLAG)
+FUTEX_WAKE_PRIVATE=(FUTEX_WAKE | FUTEX_PRIVATE_FLAG)
+FUTEX_REQUEUE_PRIVATE=(FUTEX_REQUEUE | FUTEX_PRIVATE_FLAG)
+FUTEX_CMP_REQUEUE_PRIVATE=(FUTEX_CMP_REQUEUE | FUTEX_PRIVATE_FLAG)
+FUTEX_WAKE_OP_PRIVATE=(FUTEX_WAKE_OP | FUTEX_PRIVATE_FLAG)
+FUTEX_LOCK_PI_PRIVATE=(FUTEX_LOCK_PI | FUTEX_PRIVATE_FLAG)
+FUTEX_UNLOCK_PI_PRIVATE=(FUTEX_UNLOCK_PI | FUTEX_PRIVATE_FLAG)
+FUTEX_TRYLOCK_PI_PRIVATE=(FUTEX_TRYLOCK_PI | FUTEX_PRIVATE_FLAG)
+FUTEX_WAIT_BITSET_PRIVATE=(FUTEX_WAIT_BITSET | FUTEX_PRIVATE_FLAG)
+FUTEX_WAKE_BITSET_PRIVATE=(FUTEX_WAKE_BITSET | FUTEX_PRIVATE_FLAG)
+FUTEX_WAIT_REQUEUE_PI_PRIVATE=(FUTEX_WAIT_REQUEUE_PI | FUTEX_PRIVATE_FLAG)
+FUTEX_CMP_REQUEUE_PI_PRIVATE=(FUTEX_CMP_REQUEUE_PI | FUTEX_PRIVATE_FLAG)
+
+clock_gettime:1
+futex: (arg1 == FUTEX_WAIT) || (arg1 &? FUTEX_WAKE|FUTEX_FD|FUTEX_REQUEUE|FUTEX_CMP_REQUEUE|FUTEX_WAKE_OP|FUTEX_LOCK_PI|FUTEX_UNLOCK_PI|FUTEX_PRIVATE_FLAG) || (arg1 &? FUTEX_WAKE|FUTEX_FD|FUTEX_REQUEUE|FUTEX_TRYLOCK_PI|FUTEX_WAIT_BITSET|FUTEX_WAKE_BITSET|FUTEX_WAIT_REQUEUE_PI|FUTEX_PRIVATE_FLAG) || (arg1 &? FUTEX_CMP_REQUEUE|FUTEX_TRYLOCK_PI|FUTEX_CMP_REQUEUE_PI|FUTEX_PRIVATE_FLAG) || (arg1 &? FUTEX_WAKE|FUTEX_TRYLOCK_PI|FUTEX_WAIT_BITSET|FUTEX_PRIVATE_FLAG|FUTEX_CLOCK_REALTIME) || (arg1 == FUTEX_WAKE_PRIVATE) || (arg1 == FUTEX_WAIT_PRIVATE) || (arg1 == FUTEX_CMP_REQUEUE_PRIVATE) || (arg1 == FUTEX_WAKE_OP_PRIVATE) || (arg1 == FUTEX_LOCK_PI_PRIVATE) || (arg1 == FUTEX_UNLOCK_PI)
+select:1
+getpid:1
+ioctl: (arg1 == TCGETS) || (arg1 == TIOCGPGRP) || (arg1 == TIOCGWINSZ) || (arg1 == 1074029664) || (arg1 == 1074291721) || (arg1 == 1074291822) || (arg1 == 1074553951) || (arg1 == 1075864669) || (arg1 == 1077961833) || (arg1 == 2148557923) || (arg1 == 3221775447) || (arg1 == 3221775469) || (arg1 == 3222037549) || (arg1 == 3222037606) || (arg1 == 3222299718) || (arg1 == 3222299739) || (arg1 == 3222299745) || (arg1 == 3222299748) || (arg1 == 3222299761) || (arg1 == 3222824050) || (arg1 == 3223872606)
+write:1
+read:1
+poll:1
+recvmsg:1
+sendto:1
+lseek:1
+mprotect:1
+mremap:1
+#mprotect: (arg2 == PROT_NONE) || (arg2 == PROT_WRITE)
+mmap: 1
+nanosleep:1
+close:1
+open:1
+fstat:1
+writev:1
+access:1
+rt_sigaction:1
+stat:1
+fcntl: (arg1 == F_DUPFD) || (arg1 == F_GETFD) || (arg1 == F_SETFD) || (arg1 == F_GETFL) || (arg1 == F_SETFL) || (arg1 == F_SETLKW)
+brk:1
+dup2:1
+munmap:1
+fstatfs:1
+clone:1
+exit_group:1
+wait4:1
+getrlimit:1
+rt_sigprocmask:1
+set_robust_list:1
+arch_prctl:1
+set_tid_address:1
+recvfrom:1
+pipe:1
+statfs:1
+geteuid:1
+connect:1
+socket: arg0 == AF_UNIX && ((arg1 == SOCK_STREAM && arg2 == IPPROTO_IP) || (arg1 &? SOCK_STREAM && arg2 == 0))
+getsockname:1
+sendmsg:1
+getdents:1
+uname:1
+readlink:1
+getpeername:1
+shutdown:1
+madvise:1
+exit:1
+getuid:1
+getppid:1
+fadvise64:1
+setsockopt: (arg1 == SOL_SOCKET && arg2 == SO_SNDBUF) || (arg1 == SOL_SOCKET && arg2 == SO_RCVBUF) || (arg1 == SOL_SOCKET && arg2 == SO_PRIORITY) || (arg1 == SOL_SOCKET && arg2 == SO_PASSCRED)
+clock_getres:1
+getresgid:1
+getresuid:1
+prctl: arg0 == PR_SET_NAME
+splice:1
+pipe2:1
+getgid:1
+memfd_create:1
+ftruncate:1
+faccessat:1
+lstat:1
+umask:1
+rename:1
+link:1
+unlink:1
+mkdir:1
+getsockopt: arg1 == SOL_SOCKET && arg2 == SO_ERROR
+restart_syscall:1
+getegid:1
+sched_getaffinity:1
+getpgrp:1
+getcwd:1
+getrandom:1
+chmod:1
+mincore:1
+sysinfo:1
+execve:1

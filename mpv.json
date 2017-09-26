@@ -12,13 +12,15 @@
 }
 , "whitelist": [
 	{"path": "/etc/mpv", "read_only": true, "ignore": true}
-
+        , {"path": "/var/lib/oz/cells.d/mpv-whitelist.seccomp", "read_only": true}
 	, {"path": "${HOME}/.config/mpv", "can_create": true}
 ]
 , "blacklist": [
 ]
 , "seccomp": {
-	"mode":"blacklist"
+	"mode":"whitelist"
+	, "whitelist":"/var/lib/oz/cells.d/mpv-whitelist.seccomp"
 	, "enforce": true
+	, "debug": true
 }
 }
