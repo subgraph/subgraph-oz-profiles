@@ -1,3 +1,9 @@
+subgraph-oz-profiles (0.2.4-1) testing; urgency=medium
+
+  * Fix chromium profile resolv.conf across networks
+
+ -- Subgraph <info@subgraph.com>  Thu, 28 Sep 2017 15:07:00 +0000
+
 subgraph-oz-profiles (0.2.3-1.1) testing; urgency=medium
 
   * Adding clock_gettime and gettimeofday syscalls to all whitelists
