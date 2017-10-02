@@ -35,7 +35,7 @@ FUTEX_WAIT_REQUEUE_PI_PRIVATE=(FUTEX_WAIT_REQUEUE_PI | FUTEX_PRIVATE_FLAG)
 FUTEX_CMP_REQUEUE_PI_PRIVATE=(FUTEX_CMP_REQUEUE_PI | FUTEX_PRIVATE_FLAG)
 
 clock_gettime:1
-futex: (arg1 == FUTEX_WAIT) || (arg1 &? FUTEX_WAKE|FUTEX_FD|FUTEX_REQUEUE|FUTEX_CMP_REQUEUE|FUTEX_WAKE_OP|FUTEX_LOCK_PI|FUTEX_UNLOCK_PI|FUTEX_PRIVATE_FLAG) || (arg1 &? FUTEX_WAKE|FUTEX_FD|FUTEX_REQUEUE|FUTEX_TRYLOCK_PI|FUTEX_WAIT_BITSET|FUTEX_WAKE_BITSET|FUTEX_WAIT_REQUEUE_PI|FUTEX_PRIVATE_FLAG) || (arg1 &? FUTEX_CMP_REQUEUE|FUTEX_TRYLOCK_PI|FUTEX_CMP_REQUEUE_PI|FUTEX_PRIVATE_FLAG) || (arg1 &? FUTEX_WAKE|FUTEX_TRYLOCK_PI|FUTEX_WAIT_BITSET|FUTEX_PRIVATE_FLAG|FUTEX_CLOCK_REALTIME) || (arg1 == FUTEX_WAKE_PRIVATE) || (arg1 == FUTEX_WAIT_PRIVATE) || (arg1 == FUTEX_CMP_REQUEUE_PRIVATE) || (arg1 == FUTEX_WAKE_OP_PRIVATE) || (arg1 == FUTEX_LOCK_PI_PRIVATE) || (arg1 == FUTEX_UNLOCK_PI)
+futex: (arg1 == FUTEX_WAKE_PRIVATE) || (arg1 == FUTEX_WAIT_PRIVATE) || (arg1 == FUTEX_CMP_REQUEUE_PRIVATE) || (arg1 == FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME) || (arg1 == FUTEX_WAKE_OP_PRIVATE) || (arg1 == FUTEX_LOCK_PI_PRIVATE) || (arg1 == FUTEX_UNLOCK_PI_PRIVATE) || (arg1 == FUTEX_UNLOCK_PI) || (arg1 == FUTEX_WAIT) || (arg1 == FUTEX_WAIT_REQUEUE_PI_PRIVATE) || (arg1 == FUTEX_CMP_REQUEUE_PI_PRIVATE)
 select:1
 getpid:1
 ioctl: (arg1 == TCGETS) || (arg1 == TIOCGPGRP) || (arg1 == TIOCGWINSZ) || (arg1 == 1074029664) || (arg1 == 1074291721) || (arg1 == 1074291822) || (arg1 == 1074553951) || (arg1 == 1075864669) || (arg1 == 1077961833) || (arg1 == 2148557923) || (arg1 == 3221775447) || (arg1 == 3221775469) || (arg1 == 3222037549) || (arg1 == 3222037606) || (arg1 == 3222299718) || (arg1 == 3222299739) || (arg1 == 3222299745) || (arg1 == 3222299748) || (arg1 == 3222299761) || (arg1 == 3222824050) || (arg1 == 3223872606)
@@ -44,6 +44,7 @@ read:1
 poll:1
 recvmsg:1
 sendto:1
+epoll_wait:1
 lseek:1
 mprotect:1
 mremap:1
@@ -65,20 +66,32 @@ fstatfs:1
 clone:1
 exit_group:1
 wait4:1
+epoll_ctl:1
+epoll_create1:1
+inotify_init1:1
 getrlimit:1
 rt_sigprocmask:1
 set_robust_list:1
 arch_prctl:1
 set_tid_address:1
 recvfrom:1
+newfstatat:1
 pipe:1
 statfs:1
 geteuid:1
+inotify_add_watch:1
 connect:1
 socket: arg0 == AF_UNIX && ((arg1 == SOCK_STREAM && arg2 == IPPROTO_IP) || (arg1 &? SOCK_STREAM && arg2 == 0))
 getsockname:1
 sendmsg:1
 getdents:1
+accept4:1
+chdir:1
+listen:1
+bind:1
+capget:1
+gettid:1
+setsid:1
 uname:1
 readlink:1
 getpeername:1
@@ -98,6 +111,7 @@ pipe2:1
 getgid:1
 memfd_create:1
 ftruncate:1
+socketpair:1
 faccessat:1
 lstat:1
 umask:1
@@ -105,7 +119,8 @@ rename:1
 link:1
 unlink:1
 mkdir:1
-getsockopt: arg1 == SOL_SOCKET && arg2 == SO_ERROR
+getsockopt:1
+# arg1 == SOL_SOCKET && arg2 == SO_ERROR
 restart_syscall:1
 getegid:1
 sched_getaffinity:1
