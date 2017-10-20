@@ -42,7 +42,7 @@ getpgrp: 1
 getppid: 1
 getpid: 1
 fchown: 1
-prctl: arg0 == PR_SET_NAME || arg0 == PR_GET_NAME || arg0 == PR_GET_TIMERSLACK || arg0 == PR_SET_SECCOMP
+prctl: arg0 == PR_SET_NAME || arg0 == PR_GET_NAME || arg0 == PR_GET_TIMERSLACK || arg0 == PR_SET_SECCOMP || arg0 == 38
 epoll_create1: 1
 readlinkat: 1
 getrandom: 1
